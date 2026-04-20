@@ -106,11 +106,6 @@ An interactive multi-page dashboard was developed:
 - Orange Digital Center (ODC)  
 ---
 
-## 📷 Dashboard Preview  
-_Add screenshot here_
-
----
-
 ## 📬 Contact  
 - GitHub: Ebrahim-Azab  
 - LinkedIn: [https://www.linkedin.com/in/ibrahim-ahmed-azab/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BNpSJ%2BZ4iSCmmgv3NDvT29A%3D%3D]

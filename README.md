@@ -1,192 +1,116 @@
+💻 Laptop Price Analysis & Predictive Modeling  
+
+---
 
-💻 Laptop Price Analysis & Predictive Modeling
-📌 Project Overview
-This project provides a comprehensive analysis of the global laptop market, exploring the relationships between hardware specifications and pricing. Beyond descriptive analytics, the project includes a high-accuracy machine learning model to predict laptop prices based on technical configurations.
+## 📌 Project Overview  
+This is a Final Project developed in collaboration with Orange Digital Center (ODC).  
+The project provides a comprehensive analysis of the global laptop market, focusing on how hardware specifications influence pricing. It also includes a high-performance machine learning model to predict laptop prices based on technical configurations.
 
-🎯 Objectives
-Analyze the impact of hardware components (RAM, Storage, GPU) on market price.
+---
 
-Compare brand performance regarding battery life and portability.
+## 🎯 Objectives  
+- Analyze the impact of hardware components (RAM, Storage, GPU) on laptop pricing  
+- Compare brand performance in terms of battery life and usability  
+- Develop a predictive model for accurate laptop price estimation  
+- Build an interactive dashboard for business and consumer insights  
 
-Develop a predictive model to estimate laptop prices with high precision.
+---
 
-Create an interactive dashboard for data-driven consumer insights.
+## 📊 Data Sources  
+- Dataset containing 11,700+ laptop records  
+- 10 major global laptop brands  
+- Features include: Processor, RAM, Storage (SSD/HDD), GPU, Screen Resolution, OS, Weight, Battery Life  
 
-📊 Data Sources
-The dataset contains over 11,700 records across 10 major laptop brands.
+---
 
-Features include Processor type, RAM, Storage (SSD/HDD), Resolution, Operating System, Weight, and Battery Life.
+## 🧹 Data Pre-processing & Feature Engineering  
+- Handled missing values and standardized all categorical features  
+- Applied **log transformation (np.log1p)** to reduce price skewness  
+- Used **StandardScaler** for numerical features  
+- Applied **OneHotEncoder** for categorical variables  
+- Created engineered features such as:  
+  - RAM × Processor Score interaction  
+  - Battery Life grouping (binned categories)  
+  - Weight optimization categories  
 
-🧹 Data Pre-processing & Feature Engineering
-Data Cleaning: Handled missing values and standardized categorical specifications.
+---
 
-Log Transformation: Applied np.log1p to the target variable (Price) to handle skewness and improve model convergence.
+## 🏗️ Data Modeling (Power BI)  
+A Star Schema was built to optimize performance and analysis:  
 
-Feature Scaling: Used StandardScaler for numerical columns and OneHotEncoder for categorical features.
+- **Fact Table:** laptop_prices (core metrics + price)  
+- **Dimension Tables:**  
+  - dim_processor  
+  - dim_storage  
+  - dim_resolution  
 
-New Features Created:
+Relationships were structured using unique keys to ensure efficient filtering and reporting.
 
-Price per RAM: Ratio of cost to memory capacity.
+---
 
-RAM x Processor Score: An interaction feature to capture performance synergy.
+## 📈 Key Insights  
+- Storage type (SSD vs HDD) and screen resolution (FHD vs 4K) are the strongest price drivers  
+- Lenovo and HP show the best average battery performance (~8.12 hours)  
+- Windows dominates market usage across all brands  
+- Premium brands like Apple and Razer lead in highest price segments  
 
-Categorical Binning: Created "Weight Category" and "Battery Category" for better grouping.
+---
 
-🏗️ Data Modeling (Power BI)
-Built a robust Star Schema to optimize dashboard performance:
+## 🔮 Machine Learning Model  
+- Built an end-to-end ML pipeline using Scikit-Learn  
+- Model: **HuberRegressor** (robust to outliers)  
+- Achieved performance:  
+  - **R² Score: 0.97 (97% accuracy)**  
+- Strong predictive performance across gaming and high-end laptops  
+- Reduced error margins significantly for price estimation  
 
-Fact Table: laptop_prices (containing core metrics and prices).
+---
 
-Dimension Tables: dim_processor, dim_storage, and dim_resolution.
+## 📌 Key KPIs  
+- Total Units: 11,771  
+- Price Range: $280 – $10,808  
+- Average Battery Life: 8.03 Hours  
+- Model Accuracy: 97%  
 
-Established 1-to-many relationships using unique keys and performance scores.
+---
 
-📈 Key Insights
-Price Drivers: Storage type (SSD vs HDD) and Screen Resolution (4K vs FHD) remain the primary factors in price variance.
+## 📊 Dashboard (Power BI)  
+An interactive multi-page dashboard was developed:  
 
-Battery Life: Lenovo and HP lead the average battery life rankings (approx. 8.12 hours).
+- **Overview Page:**  
+  - Key KPIs  
+  - Price distribution by processor  
+  - Brand comparison  
 
-Market Distribution: Windows is the "Most Used OS," though macOS and FreeDOS models hold significant niche price points.
+- **Details Page:**  
+  - Price vs Storage analysis  
+  - RAM distribution  
+  - Battery life trends  
 
-Performance vs. Price: A clear linear correlation exists between higher-tier processors (Intel i9 / Ryzen 9) and premium pricing tiers.
+- **Filters/Slicers:**  
+  - Brand  
+  - GPU  
+  - Storage Type  
+  - Resolution  
 
-🔮 Machine Learning & Forecasting
-Developed a predictive pipeline using Scikit-Learn.
+---
 
-Model Used: HuberRegressor (robust to outliers) within a ColumnTransformer pipeline.
+## 🛠️ Tools Used  
+- Python (Pandas, NumPy, Scikit-Learn)  
+- Power BI (DAX, Power Query, Data Modeling)  
+- Microsoft Excel (Initial cleaning & exploration)  
 
-Performance: - Achieved an R² Score of 0.97 (97% accuracy) on the testing set.
+---
 
-Successfully minimized error margins for high-end gaming and professional laptops.
+## 🎓 Final Project Partners  
+- Orange Digital Center (ODC)  
+---
 
-📌 Key KPIs
-Total Units: 11,771
+## 📷 Dashboard Preview  
+_Add screenshot here_
 
-Price Range: $280 – $10,808
+---
 
-Average Battery Life: 8.03 Hours
-
-Model Accuracy: 97%
-
-📊 Dashboard
-An interactive multi-page Power BI dashboard was developed:
-
-Overview Page: High-level metrics, price distribution by processor, and brand comparison tables.
-
-Details Page: Deep dives into average price by storage, RAM distribution (Doughnut chart), and battery life trends by processor type.
-
-Slicers: Dynamic filtering by GPU, Brand, Resolution, and Storage type.
-
-🛠️ Tools Used
-Python: Pandas, NumPy, Scikit-Learn (ML Pipeline).
-
-Power BI: DAX Measures, Data Modeling (Star Schema), Power Query.
-
-Microsoft Excel: Initial data exploration and cleaning.
-
-👥 Team
-Ibrahim Ahmed (Data Analyst & ML Developer)
-
-Omar Abdelbaset
-
-Malak Zidan
-
-Arwa Youssef
-
-Aya Taha
-
-🚀 Initiative
-Digital Egypt Pioneers Initiative (DEPI)
-
-📷 Dashboard Preview
-📬 Contact
-GitHub: Ebrahim-Azab
-
-LinkedIn: [Your LinkedIn Profile Link]
-
-وضح انه كان final project مع orange
-
-تعديل ممتاز، إضافة اسم Orange كشريك في المشروع النهائي (Final Project) بيعطي ثقل كبير للـ Readme.
-
-إليك النسخة المعدلة مع دمج Orange Digital Center ضمن سياق المشروع:
-
-💻 Laptop Price Analysis & Predictive Modeling
-📌 Project Overview
-This is the Final Project developed in collaboration with Orange Digital Center (ODC). The project provides a comprehensive analysis of the global laptop market, exploring the relationships between hardware specifications and pricing. Beyond descriptive analytics, it includes a high-accuracy machine learning model to predict prices based on technical configurations.
-
-🎯 Objectives
-Analyze the impact of hardware components (RAM, Storage, GPU) on market price.
-
-Compare brand performance regarding battery life and portability.
-
-Develop a predictive model to estimate laptop prices with high precision.
-
-Create an interactive dashboard for data-driven consumer insights.
-
-📊 Data Sources
-The dataset contains over 11,700 records across 10 major laptop brands.
-
-Features include Processor type, RAM, Storage (SSD/HDD), Resolution, Operating System, Weight, and Battery Life.
-
-🧹 Data Pre-processing & Feature Engineering
-Data Cleaning: Handled missing values and standardized categorical specifications.
-
-Log Transformation: Applied np.log1p to the target variable (Price) to handle skewness.
-
-Feature Scaling: Used StandardScaler for numerical columns and OneHotEncoder for categorical features.
-
-New Features: Created interaction terms like RAM x Processor Score and specialized binnings for Weight and Battery life.
-
-🏗️ Data Modeling (Power BI)
-Built a robust Star Schema to optimize dashboard performance:
-
-Fact Table: laptop_prices (containing core metrics and prices).
-
-Dimension Tables: dim_processor, dim_storage, and dim_resolution.
-
-Established 1-to-many relationships using unique keys and performance scores.
-
-📈 Key Insights
-Price Drivers: Storage type (SSD vs HDD) and Screen Resolution (4K vs FHD) are the primary factors in price variance.
-
-Battery Life: Lenovo and HP lead the average battery life rankings (approx. 8.12 hours).
-
-Market Distribution: Windows is the "Most Used OS," while premium brands like Apple and Razer command the highest average price points.
-
-🔮 Machine Learning & Forecasting
-Developed a predictive pipeline using Scikit-Learn.
-
-Model Used: HuberRegressor (robust to outliers) within a ColumnTransformer pipeline.
-
-Performance: - Achieved an R² Score of 0.97 (97% accuracy) on the testing set.
-
-Successfully minimized error margins for high-end gaming and professional laptops.
-
-📌 Key KPIs
-Total Units: 11,771
-
-Price Range: $280 – $10,808
-
-Average Battery Life: 8.03 Hours
-
-Model Accuracy: 97%
-
-📊 Dashboard
-An interactive multi-page Power BI dashboard was developed:
-
-Overview Page: High-level metrics, price distribution by processor, and brand comparison tables.
-
-Details Page: Deep dives into average price by storage, RAM distribution, and battery life trends.
-
-Slicers: Dynamic filtering by GPU, Brand, Resolution, and Storage type.
-
-🛠️ Tools Used
-Python: Pandas, NumPy, Scikit-Learn (ML Pipeline).
-
-Power BI: DAX Measures, Data Modeling (Star Schema), Power Query.
-
-Microsoft Excel: Initial data exploration and cleaning.
-
-📬 Contact
-GitHub: Ebrahim-Azab
-LinkedIn: [https://www.linkedin.com/in/ibrahim-ahmed-azab/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BNpSJ%2BZ4iSCmmgv3NDvT29A%3D%3D]
+## 📬 Contact  
+- GitHub: Ebrahim-Azab  
+- LinkedIn: [https://www.linkedin.com/in/ibrahim-ahmed-azab/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BNpSJ%2BZ4iSCmmgv3NDvT29A%3D%3D]
